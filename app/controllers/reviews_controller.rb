@@ -1,7 +1,16 @@
 class ReviewsController < ApplicationController
   def index
     # This is our list page
-    @reviews = Review.all
+
+    # We need to check if there is a filter
+    @price = params[:price]
+
+    if @price.present?
+      # filtering out the Reviews
+    else
+      # Show all the reviews
+      @reviews = Review.all
+    end
   end
 
   def new
@@ -54,7 +63,7 @@ class ReviewsController < ApplicationController
   end
 
   def form_params
-    params.require(:review).permit(:title, :body, :score, :restaurant, :ambiance)
+    params.require(:review).permit(:title, :body, :score, :restaurant, :ambiance, :cuisine, :price)
   end
 
 end
