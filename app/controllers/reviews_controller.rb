@@ -4,13 +4,30 @@ class ReviewsController < ApplicationController
 
     # We need to check if there is a filter
     @price = params[:price]
+    @cuisine = params[:cuisine]
 
+    # if @price.present?
+    #   # filtering out the Reviews
+    #   @reviews = Review.where(price: @price) #price: here is the database column
+    # else
+    #   # Show all the reviews
+    #   @reviews = Review.all
+    # end
+
+    # Let's start with all the Reviews
+    @reviews = Review.all
+
+    # Filtering by price
     if @price.present?
-      # filtering out the Reviews
-    else
-      # Show all the reviews
-      @reviews = Review.all
+      @reviews = @reviews.where(price: @price) #@reviews.where represents still the column of the db
     end
+
+    # Filtering by cuisine
+    if @cuisine.present?
+      @reviews = @reviews.where(cuisine: @cuisine)
+    end
+
+
   end
 
   def new
@@ -20,7 +37,7 @@ class ReviewsController < ApplicationController
 
   def create
     # Take info from the form and add it to the database
-    @review = Review.new(form_params) # The colon represents symbols on the model
+    @review = Review.new(form_params)
 
     # We want to check if the model can be saved?
     if @review.save
@@ -30,9 +47,6 @@ class ReviewsController < ApplicationController
       # Showing the view from new.html.erb
       render 'new'
     end
-
-
-    # IF not we show the new form
 
     # Save it to the database
   end
