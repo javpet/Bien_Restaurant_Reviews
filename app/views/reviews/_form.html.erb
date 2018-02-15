@@ -1,4 +1,4 @@
-<%= form_for @review do |f| %>
+<%= simple_form_for @review do |f| %>
 
   <% if @review.errors.any? %>
     <div class="errors">
@@ -10,40 +10,17 @@
     </div>
   <% end %>
 
-  <p>
-    <%= f.label :title, "Review title"  %>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :restaurant, "Restaurant's name"  %>
-    <%= f.text_field :restaurant %>
-  </p>
-
-  <p>
-    <%= f.label :body, "Detailed review"  %>
-    <%= f.text_area :body %>
-  </p>
-
-  <p>
-    <%= f.label :cuisine, "Cuisine type"  %>
-    <%= f.text_field :cuisine %>
-  </p>
-
-  <p>
+  <%= f.input :title %>
+  <%= f.input :restaurant %>
+  <%= f.input :address %>
+  <%= f.input :body %>
+  <%= f.input :cuisine %>
+  <%= f.input :price, collection: 1..3 %>
+  <!-- <p>
     <%= f.label :price, "Price"  %>
     <%= f.number_field :price, within: 1..3 %>
-  </p>
-
-  <p>
-    <%= f.label :ambiance, "Ambiance"  %>
-    <%= f.text_field :ambiance %>
-  </p>
-
-  <p>
-    <%= f.label :score, "Restaurant score"  %>
-    <%= f.number_field :score %>
-  </p>
-
-  <%= f.submit "Submit the review" %>
+  </p> -->
+  <%= f.input :ambiance %>
+  <%= f.input :score %>
+  <%= f.button :submit  %>
 <% end %>

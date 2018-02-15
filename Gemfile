@@ -5,6 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Geocoder for geolocation
+gem 'geocoder'
+
+# Simpleform for easy forms
+gem 'simple_form'
+
+# Active link for showing the active link in nav
+gem 'active_link_to'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

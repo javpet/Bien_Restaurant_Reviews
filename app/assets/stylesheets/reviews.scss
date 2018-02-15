@@ -99,6 +99,11 @@ nav.filters {
 		margin: 0 5px 0 0;
 		text-decoration: none;
 		color: $black;
+
+		// Adding active state for active_link_to
+		&.active {
+			color: $green;
+		}
 	}
 
 	div,
