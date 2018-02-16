@@ -14,10 +14,18 @@ gem 'simple_form'
 # Active link for showing the active link in nav
 gem 'active_link_to'
 
+group :production do
+# Use PostgreSQL for larger db
+   gem 'pg',  '0.20.0'
+end
+
+group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
