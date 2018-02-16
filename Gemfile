@@ -19,6 +19,9 @@ group :production do
    gem 'pg',  '0.20.0'
 end
 
+# Let's prevent the size from nasty comments
+gem 'profanity_filter'
+
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
