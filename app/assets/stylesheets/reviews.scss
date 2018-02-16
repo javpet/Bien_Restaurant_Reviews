@@ -74,6 +74,7 @@ textarea {
 	border: 1px solid #cccccc;
 	padding: 7px 10px;
 	font-family: inherit;
+	margin-bottom: 15px;
 }
 
 input[type="submit"] {
@@ -82,8 +83,24 @@ input[type="submit"] {
 	border-color: $orange;
 }
 
-textarea {
-	min-height: 400px;
+// textarea {
+// 	min-height: 400px;
+// }
+
+// textarea#review_address {
+// 	height: 37px;
+// }
+
+textarea#review_body {
+	min-height: 200px;
+}
+
+input[type="radio"] {
+	margin-bottom: 5px;
+}
+
+.review_price {
+	margin-bottom: 15px;
 }
 
 nav.filters {
