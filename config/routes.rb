@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :users #setting up routes for our users
 
+  resources :sessions #setting up routes for sessions
+
   root "reviews#index" # reviews = reviewscontroller
 end
