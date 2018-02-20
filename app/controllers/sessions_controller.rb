@@ -17,6 +17,10 @@ class SessionsController < ApplicationController
 
     # if there is the user present
     if @user
+      # Store the user as we move around the website, save it to the user's session (the session is a hash)
+      session[:user_id] = @user.id
+
+
       redirect_to root_path
     else
       render "new"
@@ -25,5 +29,7 @@ class SessionsController < ApplicationController
 
   def destroy
     #logging out
+    reset_session # this is built in to rails to reset the session
+    redirect_to new_session_path
   end
 end
