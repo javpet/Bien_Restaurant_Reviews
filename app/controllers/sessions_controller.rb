@@ -12,15 +12,13 @@ class SessionsController < ApplicationController
     @username = @form_data[:username]
     @password = @form_data[:password]
 
-    # let's check the user, if they are --- syntax coming from has_secure_password
+    # let's check the user, if they are --- syntax coming from has_secure_password documentation
     @user = User.find_by(username: @username).try(:authenticate, @password)
 
     # if there is the user present
     if @user
       # Store the user as we move around the website, save it to the user's session (the session is a hash)
       session[:user_id] = @user.id
-
-
       redirect_to root_path
     else
       render "new"

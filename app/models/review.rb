@@ -2,6 +2,9 @@ class Review < ApplicationRecord
   # Add association with one-to-many relationship
   has_many :comments
 
+  # Add association to user
+  belongs_to :user
+
   geocoded_by :address
   after_validation :geocode
 
