@@ -16,7 +16,7 @@ gem 'active_link_to'
 
 group :production do
 # Use PostgreSQL for larger db
-   gem 'pg',  '0.20.0'
+   gem 'pg'
 end
 
 # Let's prevent the site from nasty comments
