@@ -70,21 +70,33 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    @review.destroy
+    if @review.user != @current_user
+        @review.destroy
+    end
+    # Redirect to the home page
     redirect_to root_path
   end
 
   def edit
     # Edit the individual review page
     @review = Review.find(params[:id])
+
+    if @review.user != @current_user
+        redirect_to root_path
+    end
   end
 
   def update
     @review = Review.find(params[:id])
-    if @review.update(form_params) # Update is similar to save to saves the recordi in the database automatically
-      redirect_to review_path
+
+    if @review.user != @current_user
+        redirect_to root_path
     else
-      render 'edit'
+        if @review.update(form_params) # Update is similar to save to saves the recordi in the database automatically
+          redirect_to review_path
+        else
+          render 'edit'
+        end
     end
   end
 
