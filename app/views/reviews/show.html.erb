@@ -13,6 +13,14 @@
     </p>
 <% end %>
 
+<h3>Bookmarked by...</h3>
+<ul>
+    <% @review.bookmarks.each do |bookmark| %>
+        <li><%= bookmark.user.username %></li>
+    <% end %>
+</ul>
+
+
 <div class="score">
   <%= @review.score %> / 10
 </div>
