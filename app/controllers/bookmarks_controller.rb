@@ -11,4 +11,11 @@ class BookmarksController < ApplicationController
         @bookmark.save
         redirect_to review_path(@review)
     end
+
+    def destroy
+        @review = Review.find(params[:review_id])
+
+        @review.bookmarks.where(user: @current_user).delete_all # We need to check if there is a bookmark from the current user
+        redirect_to review_path(@review)
+    end
 end

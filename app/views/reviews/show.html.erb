@@ -5,7 +5,11 @@
 
 <% if is_logged_in? %>
     <p>
+        <% if @review.bookmarks.where(user: @current_user).any? %>
+            <%= link_to "Remove bookmark", review_bookmark_path(@review), method: :delete %>
+        <% else %>
         <%= link_to "Bookmark", review_bookmark_path(@review), method: :post %>
+        <% end %>
     </p>
 <% end %>
 
