@@ -3,6 +3,12 @@
 <h1><%= @review.title %></h1>
 <h2><%= @review.restaurant %></h2>
 
+<% if is_logged_in? %>
+    <p>
+        <%= link_to "Bookmark", review_bookmark_path(@review), method: :post %>
+    </p>
+<% end %>
+
 <div class="score">
   <%= @review.score %> / 10
 </div>
