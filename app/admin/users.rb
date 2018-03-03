@@ -2,7 +2,7 @@ ActiveAdmin.register User do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 
-permit_params :username, :email, :password, :password_confirmation, :is_admin
+permit_params :username, :email, :password, :password_confirmation, :is_admin, :avatar
 #
 # or
 #
