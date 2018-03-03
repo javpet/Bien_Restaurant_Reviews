@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     #actually try to login
-    @form_data = params.require(:session)
+    @form_data = params.require(:session) # This is coming from the from
 
     # pull out the username and password from form data, form_data is a hash
     @username = @form_data[:username]
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
 
   def destroy
     #logging out
-    reset_session # this is built in to rails to reset the session
+    reset_session # this is built in to rails to reset the session, everything attached is cleared out
     redirect_to new_session_path
   end
 end

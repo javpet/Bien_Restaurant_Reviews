@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  # Check login -- coming from Application controller
+  # Check login -- coming from Application controller, check everything except index and show actions / pages
   before_action :check_login, except: [:index, :show]
 
   def index
@@ -70,7 +70,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    if @review.user != @current_user
+    if @review.user != @current_user # We only let users who own the review to delete it
         @review.destroy
     end
     # Redirect to the home page

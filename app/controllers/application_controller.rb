@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def check_login
+  def check_login # We put it into a separate method because we want to check it multiple places across the site calling before_action
     unless is_logged_in?
       redirect_to new_session_path
     end
