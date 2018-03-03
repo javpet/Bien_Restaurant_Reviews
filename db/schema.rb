@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303113340) do
+ActiveRecord::Schema.define(version: 20180303130034) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "review_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20180303113340) do
     t.string "real_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_admin", default: false
   end
 
 end

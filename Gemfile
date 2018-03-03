@@ -28,6 +28,9 @@ gem 'carrierwave', '~> 1.0'
 # MiniMagick
 gem "mini_magick"
 
+# Using AWS for hosting
+gem "fog-aws"
+
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
