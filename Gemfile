@@ -22,6 +22,12 @@ end
 # Let's prevent the site from nasty comments
 gem 'profanity_filter'
 
+# Let's add uploading files
+gem 'carrierwave', '~> 1.0'
+
+# MiniMagick
+gem "mini_magick"
+
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
