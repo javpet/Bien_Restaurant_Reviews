@@ -28,4 +28,24 @@ class ApplicationController < ActionController::Base
     session[:user_id].present?
   end
 
+  # Check admin login status
+  def check_admin
+    @user = find_current_user #this returns the user or nothing(nil)
+
+    unless @user.present? && @user.is_admin?
+      redirect_to root_path
+    end
+  end
+
+  # Find admin user
+  def find_admin_user
+    @current_user = find_current_user
+
+    if @current_user.present? && @current_user.is_admin?
+      @current_user
+    else
+      nil
+    end
+  end
+
 end

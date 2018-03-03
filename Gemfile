@@ -31,6 +31,15 @@ gem "mini_magick"
 # Using AWS for hosting
 gem "fog-aws"
 
+# Using active admin for panel
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
+
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'

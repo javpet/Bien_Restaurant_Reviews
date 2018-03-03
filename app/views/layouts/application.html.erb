@@ -19,6 +19,10 @@
       <nav>
         <% if is_logged_in? %>
           <%= @current_user.username %>
+
+          <% if @current_user.is_admin? %>
+            <%= link_to "Admin panel", admin_root_path  %>
+          <% end %>
           <%= link_to "Add a review", new_review_path %>
           <%= link_to "Log out", session_path, method: :delete %>
         <% else %>
@@ -33,7 +37,7 @@
     </main>
 
     <footer>
-      Copyright 2018 Bien Reviews
+      Copyright 2018 Bien Reviews - <%= link_to "About", about_path  %> - <%= link_to "Terms", terms_path %>
     </footer>
   </body>
 </html>

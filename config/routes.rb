@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   resources :reviews do
     resources :comments
     resource :bookmark # We only do it once because the user can only bookmark it once
@@ -8,5 +9,9 @@ Rails.application.routes.draw do
 
   resource :session #setting up a route for sessions
 
-  root "reviews#index" # reviews = reviewscontroller
+  # Setting up content pages to manage from Active_admin
+  get "about", to: "pages#about"
+  get "terms", to: "pages#terms"
+
+  root "pages#home" # reviews = reviewscontroller
 end
