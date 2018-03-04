@@ -1,5 +1,7 @@
 <% if @user.avatar.present? %>
   <%= image_tag @user.avatar.medium %>
+<% elsif @user.gravatar_image.present? %>
+  <%= image_tag @user.gravatar_image %>
 <% end %>
 
 <h2><%= @user.username %></h2>

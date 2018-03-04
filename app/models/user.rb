@@ -13,4 +13,9 @@ class User < ApplicationRecord
   def to_param
        username
   end
+
+  def gravatar_image
+    encrypted_email = Digest::MD5.hexdigest(self.email.downcase)
+    "https://www.gravatar.com/avatar/#{encrypted_email}.jpg?s=400"
+  end
 end
