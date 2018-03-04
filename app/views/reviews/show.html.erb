@@ -19,7 +19,7 @@
 <h3>Bookmarked by...</h3>
 <ul>
     <% @review.bookmarks.each do |bookmark| %>
-        <li><%= bookmark.user.username %></li>
+        <li><%= bookmark.user.username %></li><span><%= image_tag bookmark.user.avatar.thumb %></span>
     <% end %>
 </ul>
 
