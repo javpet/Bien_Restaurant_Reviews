@@ -28,6 +28,10 @@ class ApplicationController < ActionController::Base
     session[:user_id].present?
   end
 
+
+
+  # These methods below are going in the initializers active_admin.rb file
+
   # Check admin login status
   def check_admin
     @user = find_current_user #this returns the user or nothing(nil)

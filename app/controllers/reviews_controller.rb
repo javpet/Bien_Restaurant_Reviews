@@ -83,7 +83,7 @@ class ReviewsController < ApplicationController
 
     if @review.user != @current_user
         redirect_to root_path
-    elsif @review.created_at < 1.hour.ago # User can only edit their reviews within an hour from client's brief
+    elsif @review.created_at < 1.hour.ago # User can only edit their reviews within an hour, coming from client's brief
       redirect_to review_path(@review)
     end
   end
