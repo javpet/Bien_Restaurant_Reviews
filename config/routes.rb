@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resource :session #setting up a route for sessions
 
+  resource :account # there is only 1 account to edit a time
+
   # Setting up content pages to manage from Active_admin
   get "about", to: "pages#about"
   get "terms", to: "pages#terms"
