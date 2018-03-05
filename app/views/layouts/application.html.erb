@@ -33,6 +33,12 @@
       </nav>
     </header>
 
+    <% if flash[:success].present? %>
+      <div class="success">
+        <%= flash[:success] %>
+      </div>
+    <% end %>
+
     <main>
       <%= yield %>
     </main>

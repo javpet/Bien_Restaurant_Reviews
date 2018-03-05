@@ -7,6 +7,8 @@ class CommentsController < ApplicationController
     @comment.user = @current_user
     @comment.save
 
+    flash[:success] = "Your comment has posted"
+
     redirect_to review_path(@review)
 
   end

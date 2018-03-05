@@ -53,6 +53,7 @@ class ReviewsController < ApplicationController
 
     # We want to check if the model can be saved?
     if @review.save
+      flash[:success] = "Your review has posted"
       # If it is we go to the homepage
       redirect_to root_path
     else
@@ -92,6 +93,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     if @review.user != @current_user
+        flash[:success] = "Your review has updated"
         redirect_to root_path
     else
         if @review.update(form_params) # Update is similar to save to saves the recordi in the database automatically
